@@ -42,6 +42,7 @@ with sync_playwright() as p:
 ```python
 from playwright.sync_api import sync_playwright
 
+
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=False)
     page = browser.new_page()
@@ -53,7 +54,7 @@ with sync_playwright() as p:
     password = page.wait_for_selector('input[type="password"]')
     password.type('admin123')
 
-    login = page.wait_for_selector('button[type="submmit"]')
+    login = page.wait_for_selector('button[type="submit"]')
     login.click()
 
     page.wait_for_timeout(3000)
