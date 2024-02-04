@@ -45,12 +45,16 @@ from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=False)
     page = browser.new_page()
-    page.goto("https://demo.automationtesting.in/Index.html")
+    page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
 
-    email = page.wait_for_selector('#email')
-    email.type('abc123@gmail.com')
-    login_button = page.wait_for_selector('#enterimg')
-    login_button.click()
+    #type #tagname
+    username = page.wait_for_selector('input[name="username"]')
+    username.type('admin')
+    password = page.wait_for_selector('input[type="password"]')
+    password.type('admin123')
+
+    login = page.wait_for_selector('button[type="submmit"]')
+    login.click()
 
     page.wait_for_timeout(3000)
 ```
