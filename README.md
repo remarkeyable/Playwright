@@ -60,3 +60,12 @@ with sync_playwright() as p:
     page.wait_for_timeout(3000)
 ```
 
+<h2>Xpath Locator</h2>
+
+```python
+   #text //tagname[text()="text"]
+   forgot_pass = page.wait_for_selector('//p[text()="Forgot your password? "]')
+   forgot_pass.click()
+
+```
+
